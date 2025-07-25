@@ -18,7 +18,12 @@ const sellerRoutes =require("./routes/SellerRoutes")
 const geocodeRoute =require("./utils/geocode")
 const reviewRoutes = require("./routes/reviewRoutes");
 
-app.use(cors());
+app.use(cors({
+    origin: "https://food-ordering-app-front.vercel.app", 
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"]
+  }));
+
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
@@ -36,7 +41,7 @@ app.use("/api/reviews", reviewRoutes);
 app.get("/", (req, res) => {
     res.send("API is running");
   });
-  
+
 const PORT = process.env.PORT || 3000
 app.listen(PORT,()=>{
     console.log(`Server is listening to PORT ${PORT}`)
