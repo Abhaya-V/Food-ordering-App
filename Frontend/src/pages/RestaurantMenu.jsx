@@ -30,8 +30,8 @@ useEffect(() => {
 
 // Fetch restaurant info
 useEffect(() => {
-  axiosInstance
-    .get(`/api/restaurant/get`)
+  axios
+    .get(`https://food-ordering-app-back.vercel.app/api/restaurant/get`)
     .then((res) => {
       const match = res.data.find((r) => r._id === id);
       setRestaurant(match);

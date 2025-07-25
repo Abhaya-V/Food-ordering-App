@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "../../../axiosInterceptor";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const SellerSignup = () => {
   const [form, setForm] = useState({
@@ -24,7 +24,7 @@ const SellerSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/seller/signup", form);
+      const res = await axios.post("https://food-ordering-app-back.vercel.app/seller/signup", form);
       setMessage(res.data.message);
       setError("");
       setForm({

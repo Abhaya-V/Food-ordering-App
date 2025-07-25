@@ -98,9 +98,9 @@ const Home = () => {
   const fetchData = async (cityKeyword = "") => {
     try {
       const [resRes, catRes, foodRes] = await Promise.all([
-        axios.get("http://localhost:8000/api/restaurant/get"),
-        axios.get("http://localhost:8000/api/categories/get"),
-        axios.get("http://localhost:8000/api/foods/get"),
+        axios.get("https://food-ordering-app-back.vercel.app/api/restaurant/get"),
+        axios.get("https://food-ordering-app-back.vercel.app/api/categories/get"),
+        axios.get("https://food-ordering-app-back.vercel.app/api/foods/get"),
       ]);
 
       const filteredRestaurants = cityKeyword

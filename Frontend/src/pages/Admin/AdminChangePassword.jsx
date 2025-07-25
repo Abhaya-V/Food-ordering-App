@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axiosInstance from "../../../axiosInterceptor";
+import axios from "axios";
 
 const AdminChangePassword = () => {
   const navigate = useNavigate();
@@ -19,8 +20,8 @@ const AdminChangePassword = () => {
       return setError("Passwords do not match");
     }
     try {
-      const res = await axiosInstance.put(
-        "http://localhost:8000/admin/update",
+      const res = await axios.put(
+        "https://food-ordering-app-back.vercel.app/admin/update",
         {
           email,
           newPassword,

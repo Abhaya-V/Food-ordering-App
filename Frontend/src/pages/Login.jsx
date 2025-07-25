@@ -34,7 +34,7 @@ const Login = ({ setIsLoggedIn }) => {
     // validation
     if (!validateForm()) return
     axios
-      .post("http://localhost:8000/api/users/login", { email, password })
+      .post("https://food-ordering-app-back.vercel.app/api/users/login", { email, password })
       .then((res) => {
         console.log("Login Successfull")
         // token

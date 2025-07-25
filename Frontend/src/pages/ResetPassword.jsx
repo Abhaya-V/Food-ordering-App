@@ -44,7 +44,7 @@ const ResetPassword = () => {
     // validation
     if (!validateForm()) return
     axios
-      .post("http://localhost:8000/api/users/reset-password", {
+      .post("https://food-ordering-app-back.vercel.app/api/users/reset-password", {
         email,
         newPassword: password,
       })

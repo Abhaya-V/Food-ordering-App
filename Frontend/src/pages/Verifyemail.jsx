@@ -10,7 +10,7 @@ const Verifyemail = () => {
   const handleKey = (e) => {
     e.preventDefault()
     axios
-      .post("http://localhost:8000/api/users/verify", {verificationEmail })
+      .post("https://food-ordering-app-back.vercel.app/api/users/verify", {verificationEmail })
       .then((res) => {
         alert(res.data.message)
         navigate("/login")

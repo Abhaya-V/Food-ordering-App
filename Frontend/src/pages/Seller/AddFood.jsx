@@ -24,7 +24,7 @@ const AddFood = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/categories/get");
+      const res = await axios.get("https://food-ordering-app-back.vercel.app/api/categories/get");
       setCategories(res.data);
     } catch (err) {
       console.error("Failed to fetch categories", err);

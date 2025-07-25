@@ -39,7 +39,7 @@ const Verifypassword = () => {
     // validation
     if (!validateEmail()) return
     axios
-      .post("http://localhost:8000/api/users/forgot-password", { email })
+      .post("https://food-ordering-app-back.vercel.app/api/users/forgot-password", { email })
       .then((res) => {
         alert(res.data.message)
         setOtpSent(true)

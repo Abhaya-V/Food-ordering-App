@@ -47,8 +47,8 @@ const Foodlist = () => {
         const userCity = userRes.data.location?.city?.toLowerCase();
 
         const [foodRes, restaurantRes] = await Promise.all([
-          axiosInstance.get("/api/foods/get"),
-          axiosInstance.get("/api/restaurant/get"),
+          axios.get("https://food-ordering-app-back.vercel.app/api/foods/get"),
+          axios.get("https://food-ordering-app-back.vercel.app/api/restaurant/get"),
         ]);
 
         const allFoods = foodRes.data;

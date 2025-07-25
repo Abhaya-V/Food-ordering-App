@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../../axiosInterceptor";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const EditFood = () => {
   const { id } = useParams();
@@ -43,7 +44,7 @@ const EditFood = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axiosInstance.get("/api/categories/get");
+      const res = await axios.get("https://food-ordering-app-back.vercel.app/api/categories/get");
       setCategories(res.data);
     } catch (err) {
       console.error("Failed to fetch categories", err);

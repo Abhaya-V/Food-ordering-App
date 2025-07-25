@@ -8,7 +8,7 @@ const RevenueDetails = () => {
   useEffect(() => {
     const fetchRevenueData = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/order/orders");
+        const res = await axios.get("https://food-ordering-app-back.vercel.app/api/order/orders");
         if (res.data.commissionReport) {
           setCommissionReport(res.data.commissionReport);
         }
